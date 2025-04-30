@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .container {
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  h1 {
+    color: #232f3e;
+    margin-bottom: 1rem;
+  }
+  
+  input[type="file"] {
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    background-color: #ffa41c;
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #cc8500;
+  }
+  
+  #result {
+    margin-top: 1rem;
+    color: #111;
+  }
+  
