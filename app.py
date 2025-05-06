@@ -20,6 +20,7 @@ def index():
             try:
                 # Pass the uploaded image to the predict_image function
                 result, confidence = predict_image(image)
+                confidence = round(confidence * 100, 2) 
             except Exception as e:
                 return f"Error during prediction: {str(e)}"
 

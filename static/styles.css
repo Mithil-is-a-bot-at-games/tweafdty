@@ -1,49 +1,68 @@
+/* static/styles.css */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f3f3;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .container {
-    text-align: center;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    width: 90%;
-    max-width: 400px;
-  }
-  
-  h1 {
-    color: #232f3e;
-    margin-bottom: 1rem;
-  }
-  
-  input[type="file"] {
-    margin-bottom: 1rem;
-  }
-  
-  button {
-    background-color: #ffa41c;
-    border: none;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #cc8500;
-  }
-  
-  #result {
-    margin-top: 1rem;
-    color: #111;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: 80px auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #2c3e50;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button {
+  padding: 12px;
+  background-color: #2e86de;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1b4f72;
+}
+
+#result {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+h2 {
+  margin-bottom: 8px;
+  color: #27ae60;
+}
