@@ -1,3 +1,8 @@
+from flask import Flask, render_template, request
+from teach import predict_image  # Import the predict_image function from teach.py
+
+app = Flask(__name__)
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     result = None
@@ -13,8 +18,13 @@ def index():
 
         if image:
             try:
+                # Pass the uploaded image to the predict_image function
                 result, confidence = predict_image(image)
             except Exception as e:
                 return f"Error during prediction: {str(e)}"
 
+    # Ensure that result and confidence are passed to the template
     return render_template("index.html", result=result, confidence=confidence)
+
+if __name__ == "__main__":
+    app.run(debug=True)

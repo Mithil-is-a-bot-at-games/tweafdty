@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teachable Machine Classifier</title>
+  <!-- Ensure that Flask serves the static CSS file correctly -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>Teachable Machine Classifier</h1>
+    
+    <!-- The form now submits to the correct route ("/") -->
+    <form action="/" method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required />
+      <button type="submit">Classify Image</button>
+    </form>
+    
+    <!-- Display result and confidence only if available -->
+    <div id="result">
+      {% if result %}
+        <h2>Prediction: {{ result }}</h2>
+        <p>Confidence: {{ confidence }}</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
