@@ -1,68 +1,103 @@
 /* static/styles.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f7fa;
-  color: #333;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f4f8;
+  color: #2f3e46;
 }
 
 .container {
+  width: 100%;
   max-width: 600px;
-  margin: 80px auto;
   background-color: #ffffff;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 48px 36px;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   text-align: center;
+  transition: box-shadow 0.3s ease;
 }
 
 h1 {
   font-size: 2rem;
   margin-bottom: 24px;
-  color: #2c3e50;
+  color: #1e3a8a;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 18px;
+  margin-bottom: 28px;
 }
 
 input[type="file"] {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background-color: #f9fafb;
   cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+input[type="file"]:hover {
+  border-color: #60a5fa;
 }
 
 button {
   padding: 12px;
-  background-color: #2e86de;
-  color: #fff;
-  font-weight: bold;
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-weight: 600;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 button:hover {
-  background-color: #1b4f72;
+  background-color: #2563eb;
+  transform: translateY(-1px);
 }
 
 #result {
   margin-top: 24px;
-  padding: 16px;
-  border-radius: 8px;
-  background-color: #ecf0f1;
-  color: #2c3e50;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #e0f2fe;
+  color: #1e3a8a;
   font-size: 1.1rem;
 }
 
 h2 {
   margin-bottom: 8px;
-  color: #27ae60;
+  color: #10b981;
+}
+
+.result-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.image-preview {
+  flex: 1;
+  max-width: 300px;
+}
+
+.preview-img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }

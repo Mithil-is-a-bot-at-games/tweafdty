@@ -3,35 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Image Classifier</title>
+  <title>Bike Image Classifier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
   <div class="app">
     <header>
       <h1>AI Image Classifier</h1>
-      <p>Upload an image and let the model predict what's in it.</p>
+      <p>Upload an image and let the model predict if it is a sports or cruiser bike.</p>
     </header>
 
     <main>
       <form class="upload-form" action="/" method="POST" enctype="multipart/form-data">
         <label for="image-upload" class="upload-label">Choose an image</label>
-        <input id="image-upload" type="file" name="image" accept="image/*" required />
+        <input id="image-upload" type="file" name="image" accept="image/*" required onchange="previewImage(event)" />
         <button type="submit" class="submit-btn">Classify</button>
       </form>
 
       {% if result %}
-      <div class="result-box">
-        <h2>Prediction Result</h2>
-        <p class="prediction"><strong>Class:</strong> {{ result }}</p>
-        <p class="confidence"><strong>Confidence:</strong> {{ confidence | round(3) }}%</p>
+      <div class="result-container">
+        <div class="image-preview" id="previewContainer">
+          <!-- Preview will be injected here -->
+        </div>
+
+        <div class="result-box">
+          <h2>Prediction Result</h2>
+          <p class="prediction"><strong>Class:</strong> {{ result }}</p>
+          <p class="confidence"><strong>Confidence:</strong> {{ '%.2f' | format(confidence * 100) }}%</p>
+        </div>
       </div>
       {% endif %}
     </main>
 
     <footer>
-      <p>&copy; 2025 im literally the best. All rights are mine. </p>
+      <p>&copy; 2025 im literally the best. All rights are mine.</p>
     </footer>
   </div>
+
+  <script>
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const previewContainer = document.getElementById('previewContainer');
+        previewContainer.innerHTML = `<img src="${reader.result}" alt="Image Preview" class="preview-img">`;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
 </body>
 </html>

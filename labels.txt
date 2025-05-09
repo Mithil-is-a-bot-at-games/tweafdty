@@ -1,2 +1,2 @@
-0 Sports
-1 Cruiser
+Sports
+Cruiser
